@@ -1,19 +1,12 @@
 a, b = input().split()
+new_a = ""
+new_b = ""
 
-for i in range(len(a) // 2):
-    tmp = a[i]
-    a[i] = a[len(a) - i - 1]
-    a[len(a) - i - 1] = tmp
-
-
-for i in range(len(b) // 2):
-    tmp = b[i]
-    b[i] = b[len(b) - i - 1]
-    b[len(b) - i - 1] = tmp
-
-if int(a) > int(b):
-    print(int(a))
+for  i in range(2, -1, -1):
+    new_a += a[i]
+    new_b += b[i]
+    
+if int(new_a) > int(new_b):
+    print(int(new_a))
 else:
-    print(int(b))
-
-
+    print(int(new_b))
